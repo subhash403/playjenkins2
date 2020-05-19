@@ -16,7 +16,7 @@ spec:
         app: web
     spec:
       containers:
-      - image: nginx
+      - image: '{ parameters.image }'
         name: mynginx
 
 ---
@@ -28,7 +28,7 @@ metadata:
   name: mynginx
 spec:
   ports:
-  - nodePort: 32223
+  - nodePort: '{ parameters.nodeport }'
     port: 80
     protocol: TCP
     targetPort: 80
